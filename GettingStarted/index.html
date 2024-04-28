@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/logo_small.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19">
     
     
       
@@ -1702,6 +1702,16 @@ launching DAPHNE via Docker (see below) should work the same way as in a native 
 <td>2022.x</td>
 <td>Optional for FPGAOPENCL ops</td>
 </tr>
+<tr>
+<td>tensorflow</td>
+<td>2.13.1</td>
+<td>Optional for data exchange between DaphneLib and TensorFlow</td>
+</tr>
+<tr>
+<td>torch</td>
+<td>2.3.0+cu121</td>
+<td>Optional for data exchange between DaphneLib and PyTorch</td>
+</tr>
 </tbody>
 </table>
 <h3 id="hardware">Hardware</h3>
@@ -1788,9 +1798,9 @@ use containers.</p>
 higher are sufficient</li>
 <li>you can use the provided docker files and scripts to create and run DAPHNE.</li>
 </ul>
-<p><strong>A full description on containers is available in the <a href="containers">containers</a> subdirectory.</strong></p>
+<p><strong>A full description on containers is available in the <a href="https://github.com/daphne-eu/daphne/tree/main/containers">containers</a> subdirectory.</strong></p>
 <p>The following recreates all images provided by <a href="https://hub.docker.com/u/daphneeu">daphneeu</a></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span><span class="w"> </span>container
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span><span class="w"> </span>containers
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>./build-containers.sh
 </code></pre></div>
 <p>Running in an interactive container can be done with this run script, which takes care of mounting your
@@ -1872,7 +1882,7 @@ For documentation about using containers in conjunction with our cluster deploym
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
     
   </body>
