@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/logo_small.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
     
     
       
@@ -2177,12 +2177,15 @@ Variables must have been assigned to before they are used in an expression.</p>
 <h4 id="literals">Literals</h4>
 <p>Literals represent hard-coded values and can be of various data and value types:</p>
 <h5 id="scalar-literals">Scalar literals</h5>
-<p><strong>Integer literals</strong> are specified in decimal notation.
-By default, they have the type <code>si64</code>, but if the optional suffix <code>u</code> is appended, the type is <code>ui64</code>.</p>
-<p><em>Examples</em>: <code>0</code>, <code>123</code>, <code>-456</code>, <code>18446744073709551615u</code></p>
-<p><strong>Floating-point literals</strong> are specified in decimal notation and have the type <code>f64</code>.
-Furthermore, the following literals stand for special floating-point values: <code>nan</code>, <code>inf</code>, <code>-inf</code>.</p>
-<p><em>Examples</em>: <code>0.0</code>, <code>123.0</code>, <code>-456.78</code>, <code>inf</code>, <code>nan</code></p>
+<p><strong>Integer literals</strong> are specified in decimal digits.
+By default, they have the type <code>si64</code>, but if the optional suffix <code>u</code> is appended, the type is <code>ui64</code>.
+They support the digit separators <code>'</code> and <code>_</code>.</p>
+<p><em>Examples</em>: <code>0</code>, <code>123</code>, <code>-456</code>, <code>1_000</code>, <code>18446744073709551615u</code></p>
+<p><strong>Floating-point literals</strong> are specified in decimal or scientific notation.
+The following literals stand for special floating-point values: <code>nan</code>, <code>inf</code>, <code>-inf</code>.
+By default, the type of a floating-point literal is <code>f64</code>, but if an <code>f</code> is appended to the literal, it is of type <code>f32</code> instead.
+Floating-point literals support the digit separators <code>'</code> and <code>_</code>.</p>
+<p><em>Examples</em>: <code>0.0</code>, <code>123.0</code>, <code>-456.78f</code>, <code>inf</code>, <code>nan</code>, <code>1.2e5f</code>, <code>1E-14</code></p>
 <p><strong>Boolean literals</strong> can be <code>false</code> and <code>true</code>.</p>
 <p><strong>String literals</strong> are enclosed in quotation marks <code>"</code>.
 Special characters must be escaped using a backslash:</p>
@@ -2401,7 +2404,7 @@ The result is always a data object of the same data type as the input (even <em>
 <h5 id="indexing-by-bit-vector">Indexing by bit vector</h5>
 <p>This is not supported for addressing columns of frames yet.</p>
 <p>For each row/column, a single zero/one entry ("bit") must be provided.
-More precisely, a (<em>r x 1</em>) matrix is required on data objects with <em>r</em> rows, and a (<em>c x 1</em>) matrix is required on data objects with <em>c</em> columns.
+More precisely, a (<em>n x 1</em>) matrix is required on data objects with <em>n</em> rows, and a (<em>m x 1</em>) matrix is required on data objects with <em>m</em> columns.
 Only the rows/columns with a corresponding 1-value in the bit vector are present in the result.</p>
 <p>Note that double square brackets (<code>[[...]]</code>) must be used to distinguish indexing by bit vector from indexing by an arbitrary sequence of positions.</p>
 <p><em>Examples:</em></p>
@@ -2768,6 +2771,12 @@ Here, the name of the pre-compiled kernel function can optionally be attached to
     
     
       <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
