@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/logo_small.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
@@ -1180,6 +1180,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/Testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1225,7 +1246,8 @@
 
 <h1 id="profiling-daphne-using-papi">Profiling DAPHNE using PAPI</h1>
 <p>You can profile your DAPHNE script by using the <code>--enable-profiling</code> CLI
-switch.</p>
+switch.
+Note that profiling is only available if DAPHNE was built <em>without</em> the <code>--no-papi</code> flag.</p>
 <p>DAPHNE supports profiling via the <a href="https://github.com/icl-utk-edu/papi">PAPI</a>
 profiling library, specifically the
 <a href="https://github.com/icl-utk-edu/papi/wiki/PAPI-HL">high-level (HL) PAPI API</a>.</p>
