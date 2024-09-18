@@ -1,0 +1,14 @@
+// verify that float literals have the correct type (float/double)
+
+// special values
+print(typeOf(nan));
+print(typeOf(nanf));
+print(typeOf(inf));
+print(typeOf(inff));
+
+// numeric values
+print("");
+print(typeOf(1.0));
+print(typeOf(1.0f));
+print(typeOf(1e4));
+print(typeOf(1e4f));

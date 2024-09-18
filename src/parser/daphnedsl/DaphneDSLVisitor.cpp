@@ -1813,32 +1813,31 @@ antlrcpp::Any DaphneDSLVisitor::visitLiteral(DaphneDSLGrammarParser::LiteralCont
     }
     if(auto lit = ctx->FLOAT_LITERAL()) {
         std::string litStr = lit->getText();
-        double val;
-        if(litStr == "nan")
-            val = std::numeric_limits<double>::quiet_NaN();
-        else if(litStr == "nanf")
-            val = std::numeric_limits<float>::quiet_NaN();
-        else if(litStr == "inf")
-            val = std::numeric_limits<double>::infinity();
-        else if(litStr == "inff")
-            val = std::numeric_limits<float>::infinity();
-        else if(litStr == "-inf")
-            val = -std::numeric_limits<double>::infinity();
-        else if(litStr == "-inff")
-            val = -std::numeric_limits<float>::infinity();
+        #define castToConstOp(val) static_cast<mlir::Value>(builder.create<mlir::daphne::ConstantOp>(loc, val))
+
+        if (litStr == "nan")
+            return castToConstOp(std::numeric_limits<double>::quiet_NaN());
+        else if (litStr == "nanf")
+            return castToConstOp(std::numeric_limits<float>::quiet_NaN());
+        else if (litStr == "inf")
+            return castToConstOp(std::numeric_limits<double>::infinity());
+        else if (litStr == "inff")
+            return castToConstOp(std::numeric_limits<float>::infinity());
+        else if (litStr == "-inf")
+            return castToConstOp(-std::numeric_limits<double>::infinity());
+        else if (litStr == "-inff")
+            return castToConstOp(-std::numeric_limits<float>::infinity());
         else if (litStr.back() == 'f') {
             // remove digit separators
             litStr = std::regex_replace(litStr, std::regex("_|'"), "");
-            auto fval = std::stof(litStr.c_str());
-            return static_cast<mlir::Value>(builder.create<mlir::daphne::ConstantOp>(loc, fval));
+            return castToConstOp(std::stof(litStr.c_str()));
         }
         else {
             // remove digit separators
             litStr = std::regex_replace(litStr, std::regex("_|'"), "");
-            val = std::atof(litStr.c_str());
+            return castToConstOp(std::atof(litStr.c_str()));
         }
-        return static_cast<mlir::Value>(builder.create<mlir::daphne::ConstantOp>(loc, val)
-        );
+        #undef castToConstOp
     }
     if(ctx->bl)
         return visit(ctx->bl);
