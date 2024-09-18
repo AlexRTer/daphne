@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/logo_small.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
     
     
       
@@ -2082,7 +2082,8 @@ Optionally, a label can be specified for each column (the number of provided col
 <li>
 <p><strong><code>rand</code></strong><code>(numRows:size, numCols:size, min:scalar, max:scalar, sparsity:double, seed:si64)</code></p>
 <p>Generates a <em>(<code>numRows</code> x <code>numCols</code>)</em> matrix of random values.
-The values are drawn uniformly from the range <em>[<code>min</code>, <code>max</code>]</em> (both inclusive).
+The values are drawn uniformly from the range <em>[<code>min</code>, <code>max</code>]</em> (both inclusive). A value of zero in the <code>min</code> parameter
+will be ignored, as the insertion of zeros in the output is controlled by the <code>sparsity</code> parameter.
 The <code>sparsity</code> can be chosen between <code>0.0</code> (all zeros) and <code>1.0</code> (all non-zeros).
 The <code>seed</code> can be set to <code>-1</code> (randomly chooses a seed), or be provided explicitly to enable reproducible random values.</p>
 </li>
@@ -3037,7 +3038,7 @@ Returns (1) the result as a new list (the argument list stays unchanged), and (2
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
